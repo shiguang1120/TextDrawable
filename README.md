@@ -134,7 +134,7 @@ image.setImageDrawable(drawable);
 
 ####PS: 2015/05/19 update
 
-添加了ImageDrawer,可以自定义传入bitmap图片；
+添加了`ImageDrawer`,可以自定义传入bitmap图片；
 使用时如果需要添加selector选择器：
 ```java
 	final int draNolColor = Color.parseColor("#A4D3EE"));
