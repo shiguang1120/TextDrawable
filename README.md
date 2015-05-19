@@ -131,3 +131,35 @@ image.setImageDrawable(drawable);
 3. Use multiple letters or `unicode` characters to create interesting tiles. 
 
 <p align="center"><img src ="https://github.com/amulyakhare/TextDrawable/blob/master/screens/screen7.png" width="350"/></p>
+
+####PS: 2015/05/19 update
+
+添加了ImageDrawer,可以自定义传入bitmap图片；
+使用时如果需要添加selector选择器：
+```java
+	final int draNolColor = Color.parseColor("#A4D3EE"));
+	final int draPreColor = Color.parseColor("#E0E0E0");
+	final Drawable drawableNol;
+	final Drawable drawablePre;
+	if(index == 0){
+		// 获得icon的Bitmap对象
+        final Bitmap mBitmap = BitmapFactory.decodeResource(getResources(), android.R.drawable.ic_input_delete);
+        drawableNol = builder2.build(mBitmap, draNolColor);
+		drawablePre = builder2.build(mBitmap, draPreColor);
+	}else{
+		drawableNol = builder.build(text, draNolColor);
+		drawablePre = builder.build(text, draPreColor);
+	}
+	
+	final StateListDrawable sld = new StateListDrawable();
+	sld.addState(new int[] { -android.R.attr.state_pressed }, drawableNol);
+	sld.addState(new int[] { android.R.attr.state_pressed }, drawablePre);
+```
+或者可以直接调用StateListDrawable 创建纯颜色背景的selector：
+```java
+	final ColorDrawable cdNormal = new ColorDrawable(Color.parseColor("#88FE9D3D"));
+	final ColorDrawable cdPressed = new ColorDrawable(Color.parseColor("#EEFE9D3D"));
+	final StateListDrawable sld = new StateListDrawable();
+	sld.addState(new int[] { -android.R.attr.state_pressed }, cdNormal);
+	sld.addState(new int[] { android.R.attr.state_pressed }, cdPressed);
+```
