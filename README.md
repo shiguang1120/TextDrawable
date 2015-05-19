@@ -155,7 +155,7 @@ image.setImageDrawable(drawable);
 	sld.addState(new int[] { -android.R.attr.state_pressed }, drawableNol);
 	sld.addState(new int[] { android.R.attr.state_pressed }, drawablePre);
 ```
-或者可以直接调用StateListDrawable 创建纯颜色背景的selector：
+或者可以直接调用`StateListDrawable` 创建纯颜色背景的selector：
 ```java
 	final ColorDrawable cdNormal = new ColorDrawable(Color.parseColor("#88FE9D3D"));
 	final ColorDrawable cdPressed = new ColorDrawable(Color.parseColor("#EEFE9D3D"));
